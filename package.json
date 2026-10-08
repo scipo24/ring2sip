@@ -5,7 +5,7 @@
     "dotenv": "^16.4.7",
     "fs": "^0.0.1-security",
     "ring-client-api": "^14.2.0",
-    "sip": "^0.0.6",
+    "@vexyl.ai/sip": "^1.0.4",
     "werift": "^0.21.12"
   }
 }
