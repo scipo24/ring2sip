@@ -17,12 +17,13 @@ RUN if [ -f package.json ]; then npm install; fi
 COPY *.js ./
 COPY *.opus ./
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker-entrypoint-ring2sip.sh /usr/local/bin/docker-entrypoint-ring2sip.sh
 
 # Expose UDP ports 5080 and 8000
 EXPOSE 5080/udp 8000/udp
 
 # Start Supervisord
-CMD ["sh", "-c", "mkdir -p /var/run && supervisord -c /etc/supervisor/conf.d/supervisord.conf"]
+CMD ["/usr/local/bin/docker-entrypoint-ring2sip.sh"]
 
 EXPOSE 3000
 
